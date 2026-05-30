@@ -1,5 +1,4 @@
 # pyDBSI_net
-<<<<<<< HEAD
 
 **Physics-Informed Neural DBSI Parameter Estimation — Protocol-Conditioned Deep Sets Architecture**
 
@@ -173,5 +172,5 @@ Default model size: ~3.2M parameters.
 1. Wang Y, et al. (2011). Quantification of increased cellularity during inflammatory demyelination. *Brain*, 134(12), 3590–3601.
 2. Zaheer M, et al. (2017). Deep Sets. *NeurIPS* 30.
 3. Ye Z, et al. (2020). Improved DBSI. *NeuroImage*, 221, 117228.
-=======
->>>>>>> 38654767f7cdac199e8c2f29f57ce47a7dc72f40
+
+# pyDBSI_net
