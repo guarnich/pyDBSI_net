@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Checkpoints and results (large files — track with DVC or Git LFS if needed)
+checkpoints/
+*.pt
+*.pth
+
+# Data
+*.nii
+*.nii.gz
+*.bval
+*.bvec
+
+# Notebooks
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store

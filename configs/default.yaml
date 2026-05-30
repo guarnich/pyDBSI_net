@@ -1,0 +1,40 @@
+# DBSINet Default Configuration
+# ================================
+# All values can be overridden via CLI arguments in train_dbsi_net.py
+
+model:
+  embed_dim:       256    # Token embedding dimension (φ output)
+  aggregator_dim:  512    # Set aggregator width (ρ hidden dim)
+  n_phi_layers:    3      # Depth of token encoder φ
+  n_res_blocks:    4      # Residual blocks in aggregator ρ
+  dropout:         0.0    # Dropout (0 = disabled; enable for small datasets)
+
+training:
+  n_epochs:              100
+  batch_size:            2048
+  lr:                    3.0e-4
+  weight_decay:          1.0e-5
+  n_samples_per_protocol: 50000  # Synthetic voxels per protocol per epoch
+  seed:                  42
+  save_every:            10      # Checkpoint every N epochs
+
+loss:
+  lambda_start:    0.5    # Initial supervised loss weight
+  n_anneal_epochs: 20     # Epochs to decay supervised weight to 0
+  w_frac:          1.0    # Fraction MSE weight in supervised term
+  w_diff:          0.5    # Diffusivity MSE weight
+  w_dnonrf:        0.3    # D_nonrf MSE weight
+  w_dir:           0.2    # Fiber direction angular loss weight
+
+inference:
+  fiber_threshold: 0.15   # Minimum FF for AD/RD/FA output
+  batch_size:      4096   # Voxels per inference batch
+
+physics:
+  # These must match pyDBSI constants exactly
+  D_res_fixed:  0.10e-3  # mm²/s — restricted pool ADC (fixed)
+  thresh_res:   0.30e-3  # mm²/s — RF/NRF boundary
+  iso_adc_max:  3.50e-3  # mm²/s — iso_grid upper bound
+  rd_min:       0.05e-3
+  rd_max:       3.00e-3
+  ad_max:       3.50e-3
